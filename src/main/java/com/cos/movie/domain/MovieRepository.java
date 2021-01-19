@@ -1,0 +1,44 @@
+package com.cos.movie.domain;
+
+
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class MovieRepository {
+	
+	public List<Movie> findAll() {
+		List<Movie> movies = new ArrayList<>();
+		movies.add(new Movie(1, "title1", 4.5, Timestamp.valueOf("2010-12-25 13:26:10")));
+		movies.add(new Movie(2, "title2", 5, Timestamp.valueOf("2020-10-18 13:26:10")));
+		movies.add(new Movie(3, "title3", 3.8, Timestamp.valueOf("2010-12-25 13:26:10")));
+		movies.add(new Movie(4, "title4", 4.3, Timestamp.valueOf("2021-01-18 13:26:10")));
+		movies.add(new Movie(5, "title5", 4.9, Timestamp.valueOf("2010-12-25 13:26:10")));
+		movies.add(new Movie(6, "title6", 4.1, Timestamp.valueOf("2020-09-18 13:26:10")));
+		movies.add(new Movie(7, "title7", 3.5, Timestamp.valueOf("2020-09-18 13:26:10")));
+		movies.add(new Movie(8, "title8", 2.5, Timestamp.valueOf("2021-01-18 13:26:10")));
+		return movies;
+	}
+	
+	public Movie findById(int id) {
+		return new Movie(1, "title1", 4.5, Timestamp.valueOf("2010-12-25 13:26:10"));
+	}
+	
+	public void save(SaveReqDto dto) {
+		throw new IllegalArgumentException("fail");
+//		System.out.println("영화등록 완료");
+	}
+	
+	public void delete(int id) {
+		System.out.println("영화삭제 완료");
+	}
+	
+	public void update(int id, SaveReqDto dto) {
+		System.out.println("영화수정 완료");
+	}
+}
