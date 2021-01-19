@@ -34,14 +34,15 @@ public class MovieRepository {
 	}
 	
 	public void save(SaveReqDto dto) throws Exception {
+//		throw new Exception("fail");
 		System.out.println("영화등록 완료");
 	}
 	
-	public void delete(int id) {
+	public void delete(int id) throws Exception{
 		System.out.println("영화삭제 완료");
 	}
 	
-	public void update(int id, UpdateReqDto dto) {
+	public void update(int id, UpdateReqDto dto) throws Exception{
 		System.out.println("영화수정 완료");
 	}
 }
