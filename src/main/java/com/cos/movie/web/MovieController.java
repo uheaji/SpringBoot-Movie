@@ -16,6 +16,7 @@ import com.cos.movie.domain.CommonDto;
 import com.cos.movie.domain.Movie;
 import com.cos.movie.domain.MovieRepository;
 import com.cos.movie.domain.SaveReqDto;
+import com.cos.movie.domain.UpdateReqDto;
 
 @RestController
 public class MovieController {
@@ -43,7 +44,7 @@ public class MovieController {
 	
 	// http://localhost:8080/movie
 	@PostMapping("/movie")
-	public CommonDto<String> save(@RequestBody SaveReqDto dto) {
+	public CommonDto<String> save(@RequestBody SaveReqDto dto) throws Exception {
 		System.out.println("save()");
 		System.out.println("movie : " + dto);
 		movieRepository.save(dto);
@@ -60,7 +61,7 @@ public class MovieController {
 	
 	// http://localhost:8080/movie/7
 	@PutMapping("/movie/{id}")
-	public CommonDto<String> update(@PathVariable int id, @RequestBody SaveReqDto dto) {
+	public CommonDto<String> update(@PathVariable int id, @RequestBody UpdateReqDto dto) throws Exception {
 		System.out.println("update()");
 		movieRepository.update(id, dto);
 		return new CommonDto<>(HttpStatus.OK.value(),"ok");

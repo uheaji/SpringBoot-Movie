@@ -11,8 +11,8 @@ import com.cos.movie.domain.CommonDto;
 @ControllerAdvice
 public class MyExceptionHandler {
 
-	@ExceptionHandler(value=IllegalArgumentException.class)
-	public CommonDto<String> 요청잘못(IllegalArgumentException e) {
-		return new CommonDto<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage());
+	@ExceptionHandler(value=Exception.class)
+	public CommonDto<String> requestError(Exception e) {
+		return new CommonDto<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), "fail");
 	}
 }
